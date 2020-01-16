@@ -36,24 +36,68 @@ html, body, .wrapper {
   width: 40%;
   height: 50px;
   margin: 10px;
+  background: rgba($color: #000000, $alpha: .9);
+  text-shadow: 0 1px 1px white;
   cursor: pointer;
+  &:hover {
+    text-shadow: 0 2px 2px $secondColor;
+    box-shadow: 0 0 3px 1px $secondColor;
+    transition: .4s;
+  }
   &:nth-child(1) {
-    right: -30px;
+    left: -50%;
   }
   &:nth-child(2) {
-    right: 0;
+    left: -55%;
   }
   &:nth-child(3) {
-    right: 30px;
+    left: -60%;
   }
   span {
     display: block;
     margin: auto;
     text-transform: uppercase;
-    text-shadow: 0 1px 1px white;
   }
 }
 
-.svg {
+.svg-bg {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  svg {
+    display: none;
+    transform: translate(-10%, -15%);
+  }
+}
+
+.staggering-grid-demo {
+ 
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 168px;
+  height: 60px;
+  z-index: 5;
+  .grid-text {
+    position: absolute;
+    color: $mainBgColor;
+    font-size: 52px;
+    text-align: center;
+    width: inherit;
+    height: inherit;
+  }
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: inherit;
+    height: inherit;
+    background: $mainColor;
+  }
+  .small {
+    width: 12px;
+    height: 12px;
+    border: 1px solid $mainBgColor;
+    background: transparent;
+  }
 }
