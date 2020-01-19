@@ -1,0 +1,77 @@
+.menu {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+
+.menu__btn {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%);
+  box-shadow: 0 0 4px 1px #fff;
+  transition: .4s;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+  .menu__btn .menu__btn-icon {
+    display: block;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.8) url("../image/menu.svg") center/cover no-repeat;
+    border-radius: 8px;
+    transition: .4; }
+  .menu__btn .menu__btn-title {
+    position: absolute;
+    color: #fff;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: .3s;
+    text-shadow: 0 1px 1px #e60000;
+    font-size: 20px; }
+  .menu__btn:hover {
+    box-shadow: 0 0 4px 1px #e60000; }
+    .menu__btn:hover .menu__btn-icon {
+      background-color: rgba(230, 0, 0, 0.5); }
+    .menu__btn:hover .menu__btn-title {
+      opacity: 1;
+      transform: translate(60px, -50%); }
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden; }
+
+.menu__item {
+  position: relative;
+  display: flex;
+  box-shadow: 0 0 4px 1px #fff;
+  border-radius: 5px;
+  width: 40%;
+  height: 50px;
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.9);
+  text-shadow: 0 1px 1px white;
+  cursor: pointer; }
+  .menu__item:hover {
+    text-shadow: 0 2px 2px #e60000;
+    box-shadow: 0 0 4px 1px #e60000;
+    transition: .4s; }
+  .menu__item:nth-child(1) {
+    left: -50%; }
+  .menu__item:nth-child(2) {
+    left: -55%; }
+  .menu__item:nth-child(3) {
+    left: -60%; }
+  .menu__item span {
+    display: block;
+    margin: auto;
+    text-transform: uppercase; }
