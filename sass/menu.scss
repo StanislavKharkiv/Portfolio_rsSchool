@@ -16,7 +16,7 @@ $buttonShadow: 0 0 4px 1px $mainColor;
   height: 50px;
   border-radius: 50%;
   background: $buttonBg;
-  transform: translateY(-50%);
+  transform: translate(-140%, -50%);
   box-shadow: $buttonShadow;
   transition: .4s;
   border: none;
@@ -64,7 +64,7 @@ $buttonShadow: 0 0 4px 1px $mainColor;
   position: relative;
   display: flex;
   box-shadow: $buttonShadow;
-  border-radius: 5px;
+  border-radius: 1px;
   width: 40%;
   height: 50px;
   margin: 10px;
@@ -77,13 +77,13 @@ $buttonShadow: 0 0 4px 1px $mainColor;
     transition: .4s;
   }
   &:nth-child(1) {
-    left: -50%;
+    left: -45%;
   }
   &:nth-child(2) {
-    left: -55%;
+    left: -50%;
   }
   &:nth-child(3) {
-    left: -60%;
+    left: -55%;
   }
   span {
     display: block;
