@@ -7,6 +7,7 @@ $buttonShadow: 0 0 4px 1px $mainColor;
   position: absolute;
   height: 100%;
   width: 100%;
+  z-index: 5;
 }
 .menu__btn {
   position: absolute;
