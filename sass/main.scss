@@ -59,6 +59,7 @@ html, body, .wrapper {
 }
   // sections
 .page {
+  display: flex;
   position: absolute;
   left: 0;
   top: 0;
@@ -66,4 +67,9 @@ html, body, .wrapper {
   height: 100%;
   z-index: 2;
   background: rgba(0, 0, 0, .6);
+  color: $mainColor;
+  div {
+    margin: auto;
+  }
 }
+
