@@ -73,7 +73,7 @@ $buttonShadow: 0 0 4px 1px $mainColor;
   text-shadow: 0 1px 1px white;
   cursor: pointer;
   &:hover {
-    text-shadow: 0 2px 2px $secondColor;
+    @include textShadowRed;
     box-shadow: 0 0 4px 1px $secondColor;
     transition: .4s;
   }

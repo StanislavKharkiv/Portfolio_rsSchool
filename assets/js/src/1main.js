@@ -1,9 +1,11 @@
 const state = {
-  currentPage: ':-)',
+  currentPage: 'Home',
 }
 
 const mainBlock = document.getElementById('main');
 const menuBlock = document.getElementById('menu');
+const gridText = document.querySelector('.grid-text');
+
 let documentWidth = document.documentElement.clientWidth;
 createTextScreen();
 menuAnimation(documentWidth, bgAnimation);
@@ -15,24 +17,29 @@ window.addEventListener('resize', function() {
 menuBlock.addEventListener('click', function(e) {
   if (e.target.closest('.menu__item')) {
     hideMenu();
-    if (e.target.closest('.btn-contacts')) addSectionContacts();
-    if (e.target.closest('.btn-about')) addSectionAbout();
-    if (e.target.closest('.btn-works')) addSectionWorks();
+    if (e.target.closest('.btn-contacts')) {
+      addSectionContacts();
+      state.currentPage = 'Contacts';
+      gridAnime();
+    }
+    if (e.target.closest('.btn-about')) {
+      addSectionAbout();
+      state.currentPage = 'About';
+      gridAnime();
+    }
+    if (e.target.closest('.btn-works')) {
+      addSectionWorks();
+      state.currentPage = 'Works';
+      gridAnime();
+    } 
   }
   if (e.target.closest('.menu__btn')) {
-    const child = mainBlock.querySelector('.page')
-    mainBlock.removeChild(child)
+    const child = mainBlock.querySelector('.page');
+    if (child) mainBlock.removeChild(child);
     showMenu();
+    state.currentPage = 'Home';
+    gridAnime();
   }
-});
-
-anime({
-  targets: '.grid__child',
-  scale: [
-    { value: .1, easing: 'easeOutSine', duration: 1000 },
-    { value: 1, easing: 'easeInOutQuad', duration: 500 }
-  ],
-  delay: anime.stagger(100, { grid: [14, 5], from: 'first' }),
 });
 
 /* functions */
@@ -41,16 +48,27 @@ function createTextScreen() {
   const gridWrapper = document.getElementById('grid-wrapper');
   const grid = document.createElement('div');
   grid.className = 'grid';
-  const gridChildrenAll = 70;
+  const gridChildrenAll = 100;
   for (let i = 0; i < gridChildrenAll; i++) {
     grid.innerHTML += '<div class="grid__child"><div>'
   }
   gridWrapper.appendChild(grid);
-  gridWrapper.querySelector('.grid-text').textContent = state.currentPage;
+  // const prevGrid = gridWrapper.querySelector('.grid')
+  // if (prevGrid) {
+  //   gridWrapper.replaceChild(grid, prevGrid);
+  // } else {
+  //   gridWrapper.appendChild(grid);
+  // }
+  gridAnime();
+  gridText.textContent = state.currentPage; 
 }
 
 function hideMenu() {
-  menuAnimation(0, () => {btnMenuAnimation(1);});
+  menuAnimation(0, () => {
+    const page = document.querySelector('.page');
+    if (page) page.classList.remove('page-show');
+    btnMenuAnimation(1);
+  });
 }
 
 function showMenu() {

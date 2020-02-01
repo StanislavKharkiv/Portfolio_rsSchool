@@ -18,6 +18,6 @@ gulp.task('scripts', () => {
 })
 
 gulp.task('watch', () => {
-  gulp.watch('./sass/**/*.scss', gulp.parallel('sass'))
-  gulp.watch('./assets/js/src/*.js', gulp.parallel('scripts'))
+  gulp.watch('./sass/**/*.scss', gulp.series('sass'))
+  gulp.watch('./assets/js/src/*.js', gulp.series('scripts'))
 })

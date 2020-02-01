@@ -1,7 +1,7 @@
 // Contacts
 function addSectionContacts() {    
   const contacts = document.createElement('section');
-  contacts.className = 'contacts page';
+  contacts.className = 'contacts page page-show';
   contacts.innerHTML = `
   <div class="contacts-wrapper">
     <div class="contacts__phone"><a href="tel:+380982231377">+380982231377</a></div>
@@ -24,12 +24,23 @@ function addSectionContacts() {
 }
 // About
 function addSectionAbout() {
+  const SKILLS = ['html', 'css', 'sass', 'js', 'git', 'gulp', 'webpack'];
+  const skillsList = SKILLS.map( skill => {
+    return '<li>' + skill + '</li>';
+  })
+  console.log(skillsList)
   const about = document.createElement('section');
-  about.className = 'about page';
+  about.className = 'about page page-show';
   about.innerHTML = `
     <div class="about-wrapper">
       <h2 class="about__h2">Станислав Иосифов</h2>
       <p class="about__profession">Frontend developer</p>
+      <p>experience</p>
+      <div class="about__skills">
+       <ul class="about__skills-list">
+        ${skillsList.join('')}
+       </ul>
+      </div>
     </div>
   `
   addSectionToDom(about);
@@ -38,7 +49,7 @@ function addSectionAbout() {
 // Works
 function addSectionWorks() {
   const works = document.createElement('section');
-  works.className = 'works page';
+  works.className = 'works page page-show';
   works.innerHTML = `
     <div class="works-wrapper">
       <h2 class="works__h2">галлерея</h2>

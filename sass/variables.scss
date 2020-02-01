@@ -1,3 +1,7 @@
 $mainBgColor: #000;
 $mainColor: #fff;
 $secondColor: rgb(230, 0, 0);
+
+@mixin textShadowRed {
+  text-shadow: 0 2px 2px $secondColor;
+}

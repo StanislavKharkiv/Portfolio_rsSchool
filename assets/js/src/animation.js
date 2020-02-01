@@ -7,7 +7,7 @@ function menuAnimation(range = documentWidth, cb = null) {
     delay: function (el, i, l) {
       return i * 200;
     },
-    duration: 1300,
+    duration: 1200,
     complete: cb,
   });
 }
@@ -30,5 +30,23 @@ function bgAnimation() {
     delay: function (el, i) { return i * 800 },
     direction: 'alternate',
     loop: false
+  });
+}
+// gridAnime
+function gridAnime() {
+  gridText.classList.toggle('opacity');
+  anime({
+    targets: '.grid__child',
+    scale: [
+      { value: .1, easing: 'easeOutSine', duration: 1500 },
+      { value: 1, easing: 'easeInOutQuad', duration: 700 }
+    ],
+    delay: anime.stagger(100, { grid: [20, 5], from: 'first' }),
+    complete: function() {
+      // const page = document.querySelector('.page');
+      // if (page) page.classList.remove('page-show');
+      gridText.textContent = state.currentPage;
+      gridText.classList.toggle('opacity');
+    }
   });
 }
