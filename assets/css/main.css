@@ -2,7 +2,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 5; }
+  font-family: 'Neucha', cursive, sans-serif; }
 
 .menu__btn {
   position: absolute;
@@ -17,7 +17,8 @@
   transition: .4s;
   border: none;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 5; }
   .menu__btn .menu__btn-icon {
     display: block;
     margin: auto;
@@ -28,14 +29,14 @@
     transition: .4; }
   .menu__btn .menu__btn-title {
     position: absolute;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.85);
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
     transition: .3s;
-    text-shadow: 0 1px 1px #e60000;
-    font-size: 20px; }
+    font-size: 20px;
+    font-family: 'Kelly Slab', sans-serif; }
   .menu__btn:hover {
     box-shadow: 0 0 4px 1px #e60000; }
     .menu__btn:hover .menu__btn-icon {
@@ -57,15 +58,18 @@
   box-shadow: 0 0 4px 1px #fff;
   border-radius: 1px;
   width: 40%;
-  height: 50px;
+  height: 60px;
   margin: 10px;
   background: rgba(0, 0, 0, 0.9);
   text-shadow: 0 1px 1px white;
+  font-size: 26px;
+  letter-spacing: 2px;
   cursor: pointer; }
   .menu__item:hover {
     text-shadow: 0 2px 2px #e60000;
     box-shadow: 0 0 4px 1px #e60000;
-    transition: .4s; }
+    transition: .4s;
+    font-size: 27px; }
   .menu__item:nth-child(1) {
     left: -45%; }
   .menu__item:nth-child(2) {
@@ -90,7 +94,7 @@ html, body, .wrapper {
   position: relative;
   background: #000;
   color: #fff;
-  font-family: sans-serif; }
+  font-family: 'Kelly Slab', sans-serif; }
 
 .svg-bg {
   position: absolute;
@@ -107,18 +111,18 @@ html, body, .wrapper {
   top: 10px;
   width: 240px;
   height: 60px;
-  z-index: 5; }
+  z-index: 5;
+  box-shadow: 0 0 10px -1px #fff; }
   .grid-wrapper .grid-text {
     position: absolute;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 42px;
     line-height: 60px;
     text-align: center;
     width: inherit;
     height: inherit;
     z-index: 6;
-    text-shadow: 0 2px 2px #e60000;
-    opacity: .7;
+    text-shadow: 0 3px 3px #000;
     text-transform: uppercase;
     transition: opacity 2s; }
   .grid-wrapper .grid {
@@ -143,9 +147,133 @@ html, body, .wrapper {
   z-index: 2;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
-  transition: opacity 1s, transform 3s; }
-  .page div {
-    margin: auto; }
+  transition: opacity 1s, transform 3s;
+  letter-spacing: 2px; }
+
+.page-wrap {
+  margin: auto;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 #e60000; }
+
+.contacts .contacts__social {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around; }
+  .contacts .contacts__social a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 6px 1px #fff;
+    border-radius: 50%;
+    transition: .5s; }
+    .contacts .contacts__social a:hover {
+      box-shadow: 0 0 6px 1px #e60000;
+      background: #fff;
+      transform: rotate(360deg); }
+
+.contacts a {
+  color: #fff;
+  text-decoration: none; }
+
+.contacts span {
+  display: inline-block;
+  width: 90px;
+  color: rgba(255, 255, 255, 0.85); }
+
+.contacts__phone,
+.contacts__email {
+  margin-bottom: 20px;
+  padding-bottom: 4px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(230, 0, 0, 0.6); }
+
+.about {
+  text-align: center; }
+  .about li {
+    list-style-type: none; }
+
+.about__profession {
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(230, 0, 0, 0.6);
+  padding: 4px; }
+
+.about__skills {
+  text-align: left; }
+  .about__skills .about__skills-header {
+    margin-bottom: 20px; }
+  .about__skills .about__skills-list {
+    font-family: 'Neucha', cursive, sans-serif;
+    letter-spacing: 2px;
+    font-weight: bold; }
+  .about__skills li {
+    text-transform: uppercase; }
+
+.about__education {
+  margin-bottom: 15px;
+  text-align: left;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(230, 0, 0, 0.6); }
+  .about__education .about__education-header {
+    margin-bottom: 15px; }
+  .about__education .about__education-list {
+    font-size: 18px;
+    font-family: 'Neucha', cursive, sans-serif; }
+
+.works {
+  overflow-y: auto; }
+  .works::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(255, 255, 255, 0.6); }
+  .works::-webkit-scrollbar-thumb {
+    background-color: rgba(230, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5); }
+  .works::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8); }
+
+.works__h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.works__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto; }
+
+.card {
+  padding: 30px;
+  margin: 15px;
+  max-width: 40%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 5px 0 #e60000; }
+  .card .card__header {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid rgba(230, 0, 0, 0.6); }
+  .card .card__link {
+    display: block;
+    width: 100%;
+    box-shadow: 0 0 6px 2px #000;
+    margin-bottom: 20px;
+    overflow: hidden; }
+    .card .card__link:hover {
+      box-shadow: 0 0 6px 2px #fff; }
+    .card .card__link:hover .card__img {
+      transform: scale(1.2); }
+  .card .card__img {
+    width: inherit;
+    transition: .5s; }
+  .card .card__description {
+    font-family: Tahoma, sans-serif; }
 
 .opacity {
   opacity: 0 !important;

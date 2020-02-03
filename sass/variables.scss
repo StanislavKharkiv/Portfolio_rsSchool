@@ -5,3 +5,9 @@ $secondColor: rgb(230, 0, 0);
 @mixin textShadowRed {
   text-shadow: 0 2px 2px $secondColor;
 }
+@mixin borderBottomPages {
+  border-bottom: 1px solid rgba($secondColor, .6);
+}
+@mixin boxShadowRed {
+  box-shadow: 0 0 5px 0 $secondColor;
+}

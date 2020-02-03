@@ -7,7 +7,7 @@ $buttonShadow: 0 0 4px 1px $mainColor;
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 5;
+  font-family: 'Neucha', cursive, sans-serif;
 }
 .menu__btn {
   position: absolute;
@@ -23,6 +23,7 @@ $buttonShadow: 0 0 4px 1px $mainColor;
   border: none;
   outline: none;
   cursor: pointer;
+  z-index: 5;
   .menu__btn-icon {
     display: block;
     margin: auto;
@@ -34,14 +35,14 @@ $buttonShadow: 0 0 4px 1px $mainColor;
   }
   .menu__btn-title {
     position: absolute;
-    color: $mainColor;
+    color: rgba($mainColor, .85);
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
     transition: .3s;
-    text-shadow: 0 1px 1px $secondColor;
     font-size: 20px;
+    font-family: 'Kelly Slab', sans-serif;
   }
   &:hover {
     box-shadow: 0 0 4px 1px $secondColor;
@@ -67,15 +68,18 @@ $buttonShadow: 0 0 4px 1px $mainColor;
   box-shadow: $buttonShadow;
   border-radius: 1px;
   width: 40%;
-  height: 50px;
+  height: 60px;
   margin: 10px;
   background: $buttonBg;
   text-shadow: 0 1px 1px white;
+  font-size: 26px;
+  letter-spacing: 2px;
   cursor: pointer;
   &:hover {
     @include textShadowRed;
     box-shadow: 0 0 4px 1px $secondColor;
     transition: .4s;
+    font-size: 27px;
   }
   &:nth-child(1) {
     left: -45%;

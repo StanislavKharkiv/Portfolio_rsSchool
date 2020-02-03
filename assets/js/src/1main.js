@@ -1,7 +1,7 @@
 const state = {
-  currentPage: 'Home',
+  currentPage: 'главная',
 }
-
+const pagesName = ['главная', 'контакты', 'о себе', 'работы'];
 const mainBlock = document.getElementById('main');
 const menuBlock = document.getElementById('menu');
 const gridText = document.querySelector('.grid-text');
@@ -12,24 +12,27 @@ menuAnimation(documentWidth, bgAnimation);
   // events
 window.addEventListener('resize', function() {
   documentWidth = document.documentElement.clientWidth;
+  if (state.currentPage.toLowerCase() === pagesName[0]) {
+  
   menuAnimation(documentWidth);
+  }
 })
 menuBlock.addEventListener('click', function(e) {
   if (e.target.closest('.menu__item')) {
     hideMenu();
     if (e.target.closest('.btn-contacts')) {
       addSectionContacts();
-      state.currentPage = 'Contacts';
+      state.currentPage = pagesName[1];
       gridAnime();
     }
     if (e.target.closest('.btn-about')) {
       addSectionAbout();
-      state.currentPage = 'About';
+      state.currentPage = pagesName[2];
       gridAnime();
     }
     if (e.target.closest('.btn-works')) {
       addSectionWorks();
-      state.currentPage = 'Works';
+      state.currentPage = pagesName[3];
       gridAnime();
     } 
   }
@@ -37,7 +40,7 @@ menuBlock.addEventListener('click', function(e) {
     const child = mainBlock.querySelector('.page');
     if (child) mainBlock.removeChild(child);
     showMenu();
-    state.currentPage = 'Home';
+    state.currentPage = pagesName[0];
     gridAnime();
   }
 });
@@ -53,12 +56,6 @@ function createTextScreen() {
     grid.innerHTML += '<div class="grid__child"><div>'
   }
   gridWrapper.appendChild(grid);
-  // const prevGrid = gridWrapper.querySelector('.grid')
-  // if (prevGrid) {
-  //   gridWrapper.replaceChild(grid, prevGrid);
-  // } else {
-  //   gridWrapper.appendChild(grid);
-  // }
   gridAnime();
   gridText.textContent = state.currentPage; 
 }

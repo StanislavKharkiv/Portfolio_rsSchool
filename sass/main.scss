@@ -14,7 +14,7 @@ html, body, .wrapper {
   position: relative;
   background: $mainBgColor;
   color: $mainColor;
-  font-family: sans-serif;
+  font-family: 'Kelly Slab', sans-serif;
 }
 
 .svg-bg {
@@ -36,17 +36,17 @@ html, body, .wrapper {
   width: 240px;
   height: $height;
   z-index: 5;
+  box-shadow: 0 0 10px -1px $mainColor;
   .grid-text {
     position: absolute;
-    color: $mainColor;
+    color: rgba($mainColor, .9);
     font-size: 42px;
     line-height: $height;
     text-align: center;
     width: inherit;
     height: inherit;
     z-index: 6;
-    @include textShadowRed;
-    opacity: .7;
+    text-shadow: 0 3px 3px $mainBgColor;
     text-transform: uppercase;
     transition: opacity 2s;
   }
@@ -77,8 +77,160 @@ html, body, .wrapper {
   background: rgba(0, 0, 0, .6);
   color: $mainColor;
   transition: opacity 1s, transform 3s;
-  div {
-    margin: auto;
+  letter-spacing: 2px;
+}
+.page-wrap {
+  margin: auto;
+  background: rgba($mainBgColor, .85);
+  padding: 40px 30px;
+  border-radius: 5px;
+  @include boxShadowRed;
+}
+// CONTACTS
+.contacts {
+  .contacts__social {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      background: rgba($mainColor, .85);
+      box-shadow: 0 0 6px 1px $mainColor;
+      border-radius: 50%;
+      transition: .5s;
+      &:hover {
+        box-shadow: 0 0 6px 1px $secondColor;
+        background: $mainColor;
+        transform: rotate(360deg);
+      }
+    }
+  }
+  a {
+    color: $mainColor;
+    text-decoration: none;
+  }
+  span {
+    display: inline-block;
+    width: 90px;
+    color: rgba($mainColor, .85);
+  }
+}
+.contacts__phone,
+.contacts__email {
+  margin-bottom: 20px;
+  padding-bottom: 4px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  @include borderBottomPages;
+}
+
+// ABOUT
+$aboutMarginBottom: 15px;
+
+.about {
+  text-align: center;
+  li {
+    list-style-type: none;
+  }
+}
+
+.about__profession {
+  margin-bottom: $aboutMarginBottom;
+  @include borderBottomPages;
+  padding: 4px;
+}
+.about__skills {
+  text-align: left;
+  .about__skills-header {
+    margin-bottom: 20px;
+  }
+  .about__skills-list {
+    font-family: 'Neucha', cursive, sans-serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  li {
+    text-transform: uppercase;
+  }
+}
+
+.about__education {
+  margin-bottom: $aboutMarginBottom;
+  text-align: left;
+  padding-bottom: 4px;
+  @include borderBottomPages;
+  .about__education-header {
+    margin-bottom: $aboutMarginBottom;
+  }
+  .about__education-list {
+    font-size: 18px;
+    font-family: 'Neucha', cursive, sans-serif;
+  }
+}
+
+// WORKS
+.works {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba($mainColor, .6);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($secondColor, .5);
+    border-radius: 5px;
+    border: 1px solid rgba($mainColor, .5);
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba($mainBgColor, 0.8);
+  }
+}
+.works__h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.works__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+}
+// works CARD 
+.card {
+  padding: 30px;
+  margin: 15px;
+  max-width: 40%;
+  background: rgba($mainColor, .2);
+  @include boxShadowRed;
+  .card__header {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    @include borderBottomPages;
+  }
+  .card__link {
+    display: block;
+    width: 100%;
+    box-shadow: 0 0 6px 2px $mainBgColor;
+    margin-bottom: 20px;
+    overflow: hidden;
+    &:hover {
+      box-shadow: 0 0 6px 2px $mainColor;
+    }
+    &:hover .card__img{
+      transform: scale(1.2);
+    }
+  }
+  .card__img {
+    width: inherit;
+    transition: .5s;
+  }
+  .card__description {
+    font-family: Tahoma, sans-serif;
   }
 }
 
@@ -91,4 +243,3 @@ html, body, .wrapper {
   transform: scale(.1);
   opacity: 0;
 }
-
