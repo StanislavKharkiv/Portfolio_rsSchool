@@ -207,22 +207,50 @@ html, body, .wrapper {
   .about__skills .about__skills-header {
     margin-bottom: 20px; }
   .about__skills .about__skills-list {
+    margin-left: 17px;
     font-family: 'Neucha', cursive, sans-serif;
     letter-spacing: 2px;
     font-weight: bold; }
   .about__skills li {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    list-style-type: square; }
 
 .about__education {
   margin-bottom: 15px;
   text-align: left;
-  padding-bottom: 4px;
+  padding-bottom: 12px;
   border-bottom: 1px solid rgba(230, 0, 0, 0.6); }
   .about__education .about__education-header {
     margin-bottom: 15px; }
   .about__education .about__education-list {
+    display: inline-block;
+    vertical-align: middle;
     font-size: 18px;
-    font-family: 'Neucha', cursive, sans-serif; }
+    font-family: 'Neucha', cursive, sans-serif;
+    margin-right: 60px; }
+  .about__education .about__certificate {
+    display: inline-block;
+    margin: 10px 0;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    color: #ccc;
+    transition: .4s;
+    opacity: .6; }
+    .about__education .about__certificate:hover {
+      opacity: 1;
+      transform: scale(1.1); }
+    .about__education .about__certificate img {
+      width: 100%; }
+    .about__education .about__certificate .about__certificate-caption {
+      position: relative;
+      top: -10px;
+      left: 26px;
+      text-indent: 10px;
+      text-transform: uppercase;
+      font-size: 8px; }
 
 .works {
   overflow-y: auto; }

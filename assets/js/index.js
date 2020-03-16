@@ -190,7 +190,7 @@ function addSectionContacts() {
 }
 // About
 function addSectionAbout() {
-  const _SKILLS = ['html', 'css (sass)', 'js', 'git', 'gulp', 'webpack'];
+  const _SKILLS = ['html', 'css (sass)', 'js', 'react.js', 'git', 'gulp', 'webpack'];
   const skillsList = _SKILLS.map( skill => {
     return '<li>' + skill + '</li>';
   })
@@ -204,10 +204,14 @@ function addSectionAbout() {
         <h3 class="about__education-header">Образование:</h3>
         <ul class="about__education-list">
           <li>Средне-техническое</li>
-          <li>Онлайн курсы</li>
           <li>Самообучение</li>
+          <li>Онлайн курсы (RS School)</li>
           <li>Стажировка в офисе</li>
         </ul>
+        <a class="about__certificate" href="https://app.rs.school/certificate/qflqorit" target="_blank" title="Посмотреть сертификат">
+          <img src="assets/image/logo_rs.svg" alt="rsschool logo" />
+          <span class="about__certificate-caption">сертификат</span>
+        </a>
       </div>
       <div class="about__skills">
         <h3 class="about__skills-header">Технологии которыми владею:</h3>
