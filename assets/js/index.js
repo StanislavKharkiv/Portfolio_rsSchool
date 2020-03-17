@@ -240,6 +240,12 @@ function addSectionWorks() {
       description: 'Сайт погоды. Авто определение места положения клиента, поиск по городам, загрузка изображения и погоды(на 3 дня) для найденного города.',
     },
     {
+      name: 'Cultural portal',
+      image: 'assets/image/works/cultural-portal-min.png',
+      link: 'https://cultural-portal-rs.netlify.com/',
+      description: 'Культурный портал на тему: режиссеры Белоруси. Работа выполнена на React.js группой из 6 разработчиков.',
+    },
+    {
       name: 'Chart',
       image: 'assets/image/works/telegram.png',
       link: 'https://telegram-contest.netlify.com/',
@@ -250,6 +256,12 @@ function addSectionWorks() {
       image: 'assets/image/works/paint.png',
       link: 'https://piskel-clone-rs.netlify.com/',
       description: 'Небольшая программа для рисования. Возможность добавления кадров и отображение анимации.',
+    },
+    {
+      name: 'Data grid',
+      image: 'assets/image/works/data-grid.png',
+      link: 'https://data-grid-rs.netlify.com/',
+      description: 'Таблица с пользователями на React.js. Реализована сортировка по колонкам, поиск, вкл/выкл колонок.',
     },
   ];
   const allWorks = _WORKS.map( ({name, image, link, description}) => {
