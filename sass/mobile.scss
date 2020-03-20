@@ -1,0 +1,27 @@
+@import './variables.scss';
+
+@media screen and (max-width: 620px) {
+  // MENU
+  
+  .menu__btn .menu__btn-title {
+    display: none;
+  }
+  .menu__list .menu__item {
+    left: -50%;
+    width: 50%;
+  }
+  // PAGES
+  .works .page-wrap {
+    padding-top: 80px;
+  }
+  .wrapper .grid-wrapper {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .about-wrapper .about__photo{
+    margin-top: 40px;
+  }
+  .works__wrap .card {
+    max-width: 90%;
+  }
+}

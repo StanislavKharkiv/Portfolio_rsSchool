@@ -7,6 +7,8 @@ const menuBlock = document.getElementById('menu');
 const gridText = document.querySelector('.grid-text');
 
 let documentWidth = document.documentElement.clientWidth;
+
+console.log('document width', documentWidth)
 createTextScreen();
 menuAnimation(documentWidth, bgAnimation);
   // events
@@ -61,15 +63,16 @@ function createTextScreen() {
 }
 
 function hideMenu() {
-  menuAnimation(0, () => {
+  const mobile = documentWidth < 621 ? true : false;
+  menuAnimation(-20, () => {
     const page = document.querySelector('.page');
     if (page) page.classList.remove('page-show');
-    btnMenuAnimation(1);
+    btnMenuAnimation(1, mobile);
   });
 }
 
 function showMenu() {
-  const btnMenuPositionX = '-140%';
+  const btnMenuPositionX = '-730%';
   anime({
     targets: '.menu__item',
     translateX: documentWidth,
@@ -106,12 +109,23 @@ function menuAnimation(range = documentWidth, cb = null) {
   });
 }
 
-function btnMenuAnimation(translate) {
-  anime({
-    targets: '.menu__btn',
-    translateX: translate,
-    translateY: '-50%',
-  });
+function btnMenuAnimation(x = 1, mobile = false) {
+  if (mobile) {
+    anime({
+      targets: '.menu__btn',
+      translateX: "-51%",
+      translateY: '0',
+      left: '49%',
+      top: '90%',
+      
+    });
+  } else {
+    anime({
+      targets: '.menu__btn',
+      translateX: x,
+      translateY: '-50%',
+    });
+  }
 }
 
 function bgAnimation() {
@@ -198,6 +212,7 @@ function addSectionAbout() {
   about.className = 'about page page-show';
   about.innerHTML = `
     <div class="about-wrapper page-wrap">
+      <img class="about__photo" src="assets/image/author.jpg" alt="author" width="100" />
       <h2 class="about__h2">Станислав Иосифов</h2>
       <p class="about__profession">Frontend developer</p>
       <div class="about__education">

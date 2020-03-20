@@ -7,6 +7,8 @@ const menuBlock = document.getElementById('menu');
 const gridText = document.querySelector('.grid-text');
 
 let documentWidth = document.documentElement.clientWidth;
+
+console.log('document width', documentWidth)
 createTextScreen();
 menuAnimation(documentWidth, bgAnimation);
   // events
@@ -61,15 +63,16 @@ function createTextScreen() {
 }
 
 function hideMenu() {
-  menuAnimation(0, () => {
+  const mobile = documentWidth < 621 ? true : false;
+  menuAnimation(-20, () => {
     const page = document.querySelector('.page');
     if (page) page.classList.remove('page-show');
-    btnMenuAnimation(1);
+    btnMenuAnimation(1, mobile);
   });
 }
 
 function showMenu() {
-  const btnMenuPositionX = '-140%';
+  const btnMenuPositionX = '-730%';
   anime({
     targets: '.menu__item',
     translateX: documentWidth,

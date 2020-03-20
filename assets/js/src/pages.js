@@ -52,6 +52,7 @@ function addSectionAbout() {
   about.className = 'about page page-show';
   about.innerHTML = `
     <div class="about-wrapper page-wrap">
+      <img class="about__photo" src="assets/image/author.jpg" alt="author" width="100" />
       <h2 class="about__h2">Станислав Иосифов</h2>
       <p class="about__profession">Frontend developer</p>
       <div class="about__education">

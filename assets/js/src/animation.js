@@ -13,12 +13,23 @@ function menuAnimation(range = documentWidth, cb = null) {
   });
 }
 
-function btnMenuAnimation(translate) {
-  anime({
-    targets: '.menu__btn',
-    translateX: translate,
-    translateY: '-50%',
-  });
+function btnMenuAnimation(x = 1, mobile = false) {
+  if (mobile) {
+    anime({
+      targets: '.menu__btn',
+      translateX: "-51%",
+      translateY: '0',
+      left: '49%',
+      top: '90%',
+      
+    });
+  } else {
+    anime({
+      targets: '.menu__btn',
+      translateX: x,
+      translateY: '-50%',
+    });
+  }
 }
 
 function bgAnimation() {

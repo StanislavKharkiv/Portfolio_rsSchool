@@ -1,5 +1,6 @@
 @import './variables.scss';
 @import './menu.scss';
+@import './mobile.scss';
 
 * {
   margin: 0;
@@ -136,7 +137,12 @@ $aboutMarginBottom: 15px;
     list-style-type: none;
   }
 }
-
+.about__photo {
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 $secondColor;
+  margin-bottom: 20px;
+}
 .about__profession {
   margin-bottom: $aboutMarginBottom;
   @include borderBottomPages;
@@ -204,8 +210,10 @@ $aboutMarginBottom: 15px;
 }
 
 // WORKS
-.works {
+.page {
   overflow-y: auto;
+}
+.page {
   &::-webkit-scrollbar {
     width: 8px;
     background-color: rgba($mainColor, .6);
